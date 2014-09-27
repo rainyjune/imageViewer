@@ -234,6 +234,7 @@
         function loadImage(smallImgUrl, largeimgUrl) {
           var imgElement = $("#largeImg");
           imgElement.attr("src", smallImgUrl);
+          $("#loadingBar").show();
           var img = new Image();
           img.onload = function() {
             // that jQuery stuff
