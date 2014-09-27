@@ -36,6 +36,9 @@
     }
     #imageViewerContainer .contentContainer {
       position: static;
+      margin-top: 50%;
+      /*vertical-align: middle;*/
+      text-align: center;
     }
     
     body.modal-open {
@@ -51,6 +54,10 @@
       display: block !important;
     }
     
+    progress {
+      width: 100%;
+    }
+    
 
     </style>
   </head>
@@ -58,7 +65,8 @@
     <!-- Fixed DIV -->
     <div id="imageViewerContainer">
         <div class="contentContainer">
-          <img src="images/zfxkz.jpg" alt="pic1" />
+          <img id="largeImg" src="" alt="pic1" />
+          <div id="loadingBar"><progress></progress></div>
         </div>
         
     </div>
@@ -202,6 +210,7 @@
     <script>
       $(function(){
         var scrollTop = 0;
+        var imgUrl = "images/footer_01.png";
         $(".smallImg").on("click", function(e){
           //$("#imageViewerContainer").show();
           // log current scroll position
@@ -209,6 +218,9 @@
           console.log("scrolltoop", $(document).scrollTop().valueOf());
           scrollTop = $(document).scrollTop().valueOf();
           $("body").addClass("modal-open");
+          var lgimg = "https://static.pay.sina.com.cn/wallet/img/foot/zfxkz.jpg";
+          var localImg = "images/zfxkz.jpg";
+          loadImage(imgUrl, lgimg);
           return false;
         });
         
@@ -218,6 +230,21 @@
           window.scrollTo(0,scrollTop);
           return false;
         });
+        
+        function loadImage(smallImgUrl, largeimgUrl) {
+          var imgElement = $("#largeImg");
+          imgElement.attr("src", smallImgUrl);
+          var img = new Image();
+          img.onload = function() {
+            // that jQuery stuff
+            $("#loadingBar").hide();
+            imgElement.attr("src",largeimgUrl);
+          };
+          //setTimeout(function(){
+            img.src = largeimgUrl;  
+          //}, 3000);
+          
+        }
       });
       
     </script>
