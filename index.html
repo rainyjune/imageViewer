@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Image Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <style>
+      /*
+      body { -webkit-animation: bugfix infinite 1s; }
+
+      @-webkit-keyframes bugfix { 
+        from { padding: 0; } 
+        to { padding: 0; } 
+      }
+      */
+      
+      
+      
+      #imageViewerContainer {
+        display: none;
+      }
+      #imageViewerContainer.active{
+        display: block;
+      }
+      #imageViewerContainer.active ~ * {
+        display: none !important;
+        
+      }
+      
+      p {
+        display: block;
+      }
+      
+      p#special {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imageViewerContainer" class="">
+      <img src="images/zfxkz.jpg" alt="pic1" />
+    </div>
+    <img src="images/footer_01.png" alt="" />
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p id="special">This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <p>This is somehing........</p>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script>
+      
+      $(function(){
+        $("img").on("click", function(e){
+          //$("#imageViewerContainer").addClass("active");
+          document.querySelector("#imageViewerContainer").className = "active";
+          return false;
+        });
+      });
+      
+    </script>
+  </body>
+</html>
