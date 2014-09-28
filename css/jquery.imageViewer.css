@@ -32,6 +32,10 @@ body.modal-open #imageViewerContainer {
   display: block !important;
 }
 
+body.modal-open #imageViewerContainer .contentContainer{
+  margin: 0 !important;
+}
+
 #loadingBar {
   position:absolute;
   width:48px;
