@@ -41,5 +41,5 @@ body.modal-open #imageViewerContainer {
   top:50%;
   margin-left:-26px;
   margin-top:-26px;
-  background:url(images/ybfdbg.png) no-repeat;
+  background:url(../images/ybfdbg.png) no-repeat;
 }
