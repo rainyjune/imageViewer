@@ -35,7 +35,7 @@
       display: none;
     }
     #imageViewerContainer .contentContainer {
-      position: static;
+      position: relative;
       margin-top: 50%;
       /*vertical-align: middle;*/
       text-align: center;
@@ -58,6 +58,18 @@
       width: 100%;
     }
     
+    #loadingBar {
+      position:absolute;
+      width:48px;
+      height:48px;
+      padding:2px;
+      left:50%;
+      top:50%;
+      margin-left:-26px;
+      margin-top:-26px;
+      background:url(images/ybfdbg.png) no-repeat;
+    }
+    
 
     </style>
   </head>
@@ -66,7 +78,9 @@
     <div id="imageViewerContainer">
         <div class="contentContainer">
           <img id="largeImg" src="" alt="pic1" />
-          <div id="loadingBar"><progress></progress></div>
+          <p id="loadingBar" style="">
+            <img src="images/loading-animation-8.gif" alt="">
+          </p>
         </div>
         
     </div>
@@ -77,6 +91,7 @@
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
+    <img class="smallImg" src="images/footer_01.png" alt="" />
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
@@ -91,108 +106,6 @@
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p id="special">This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-   <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-       <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-       <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-       <p>This is somehing........</p>
-       <img class="smallImg" src="images/footer_01.png" alt="" />
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-    <p>This is somehing........</p>
-       <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
@@ -242,7 +155,7 @@
             imgElement.attr("src",largeimgUrl);
           };
           //setTimeout(function(){
-            img.src = largeimgUrl;  
+            //img.src = largeimgUrl;  
           //}, 3000);
           
         }
