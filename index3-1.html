@@ -17,61 +17,10 @@
       overflow-x: hidden;
       overflow-y: scroll !important;
       */
-      width: 100%;
+      /*width: 100%;*/
     }
-
-    #imageViewerContainer {
-      position: fixed;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      /*
-      background: green;
-      */
-      overflow: auto;
-      display: none;
-    }
-    #imageViewerContainer .contentContainer {
-      position: relative;
-      margin-top: 50%;
-      /*vertical-align: middle;*/
-      text-align: center;
-    }
-    
-    body.modal-open {
-      overflow: hidden;
-      position: fixed;
-    }
-    
-    body.modal-open > * {
-      display: none !important;
-    }
-    
-    body.modal-open #imageViewerContainer {
-      display: block !important;
-    }
-    
-    progress {
-      width: 100%;
-    }
-    
-    #loadingBar {
-      position:absolute;
-      width:48px;
-      height:48px;
-      padding:2px;
-      left:50%;
-      top:50%;
-      margin-left:-26px;
-      margin-top:-26px;
-      background:url(images/ybfdbg.png) no-repeat;
-    }
-    
-
     </style>
+    <link rel="stylesheet" href="css/jquery.imageViewer.css" />
   </head>
   <body>
     <!-- Fixed DIV -->
@@ -91,7 +40,7 @@
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
-    <img class="smallImg" src="images/footer_01.png" alt="" />
+    <img class="smallImg" src="images/footer_01.png" data-largeImgUrl="https://static.pay.sina.com.cn/wallet/img/foot/zfxkz.jpg" alt="" />
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
@@ -102,6 +51,7 @@
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
+    <img class="smallImg" src="http://src.house.sina.com.cn/imp/imp/deal/ec/0a/5/292740b2f5ad6c77cc7d39ee5f6_p7_mk7_os957d62_cm320X240.jpg" data-largeImgUrl="http://src.house.sina.com.cn/imp/imp/deal/ec/0a/5/292740b2f5ad6c77cc7d39ee5f6_p7_mk7_s800X800_wm47_pt1.jpg" alt="" />
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <p>This is somehing........</p>
@@ -120,47 +70,11 @@
     <p>This is somehing........</p>
     <p>This is somehing........</p>
     <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery.imageViewer.js"></script>
     <script>
       $(function(){
-        var scrollTop = 0;
-        var imgUrl = "images/footer_01.png";
-        $(".smallImg").on("click", function(e){
-          //$("#imageViewerContainer").show();
-          // log current scroll position
-          console.log("img position", $(this).offset());
-          console.log("scrolltoop", $(document).scrollTop().valueOf());
-          scrollTop = $(document).scrollTop().valueOf();
-          $("body").addClass("modal-open");
-          var lgimg = "https://static.pay.sina.com.cn/wallet/img/foot/zfxkz.jpg";
-          var localImg = "images/zfxkz.jpg";
-          loadImage(imgUrl, lgimg);
-          return false;
-        });
-        
-        $("#imageViewerContainer").on("click", function(e){
-          //alert("f");
-          $("body").removeClass("modal-open");
-          window.scrollTo(0,scrollTop);
-          return false;
-        });
-        
-        function loadImage(smallImgUrl, largeimgUrl) {
-          var imgElement = $("#largeImg");
-          imgElement.attr("src", smallImgUrl);
-          $("#loadingBar").show();
-          var img = new Image();
-          img.onload = function() {
-            // that jQuery stuff
-            $("#loadingBar").hide();
-            imgElement.attr("src",largeimgUrl);
-          };
-          //setTimeout(function(){
-            //img.src = largeimgUrl;  
-          //}, 3000);
-          
-        }
+        $(".smallImg").imageViewer();
       });
-      
     </script>
   </body>
 </html>
