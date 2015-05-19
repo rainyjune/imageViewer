@@ -47,3 +47,13 @@ body.modal-open #imageViewerContainer .contentContainer{
   margin-top:-26px;
   background:url(../images/ybfdbg.png) no-repeat;
 }
+
+.modal-open.overflowFix {
+  overflow: auto;
+  position: static;
+}
+.modal-open.overflowFix #imageViewerContainer {
+  position: static;
+  height: auto;
+  width: auto;
+}
